@@ -11,8 +11,6 @@ services:
     ports:
       - "8081:80"
       - "8082:433"
-    links:
-      - db
 
   db:
     build:

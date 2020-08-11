@@ -19,6 +19,6 @@ RUN apt-get update 				&& \
   chown -R mysql:mysql /var/log/mysql 		&& \
   chmod -R 777 /var/run/mysqld
 
-CMD ["chmod a+x /etc/init.sh"]
+CMD ["chmod 0755 /etc/init.sh"]
 CMD ["/etc/init.sh"]
 

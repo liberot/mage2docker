@@ -37,4 +37,5 @@ RUN apt-get update 				&& \
 
 WORKDIR /var/www/html
 
+CMD ["chmod 0755 /etc/init.sh"]
 CMD ["/etc/init.sh"]
