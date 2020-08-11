@@ -3,9 +3,11 @@ FROM debian
 ARG mysql_client
 ARG mysql_password
 ARG mysql_database
-env MYSQL_ROOT_PASSWORD ${mysql_password}
-env MYSQL_DATABASE ${mysql_database}
-env MYSQL_CLIENT ${mysql_client}
+RUN export MYSQL_ROOT_PASSWORD ${mysql_password}
+RUN export MYSQL_DATABASE ${mysql_database}
+RUN export MYSQL_CLIENT ${mysql_client}
+
+RUN echo ${MYSQL_DATABASE}
 
 RUN apt-get update 				&& \
   apt-get -y install mariadb-server 		&& \
