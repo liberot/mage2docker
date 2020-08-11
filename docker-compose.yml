@@ -2,9 +2,9 @@ version: '3'
 services:
   
   httpd:
+    container_name: httpd_magento2
     build:
       context: ./httpd
-    container_name: httpd_magento2
     volumes:
       - ./mage/magento2:/var/www/html
       - ./httpd/init.sh:/etc/init.sh
@@ -13,13 +13,13 @@ services:
       - "8082:433"
 
   db:
+    container_name: db_magento2
     build:
       context: ./db
-      args:
-        - mysql_client=root
-        - mysql_password=magento20001
-        - mysql_database=magento20001
-    container_name: db_magento2
+    environment: 
+      MYSQL_CLIENT: root 
+      MYSQL_PASSWORD: magento20001 
+      MYSQL_DATABASE: magento20001 
     volumes: 
       - ./db/init.sh:/etc/init.sh
 #     - ./db/data:/var/lib/mysql
@@ -27,7 +27,7 @@ services:
       - "3306:3306"
 
   redis:
+    container_name: redis_magento2
     build:
       context: ./redis
-    container_name: redis_magento2
     
