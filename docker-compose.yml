@@ -26,9 +26,10 @@ services:
       - ./db/init.sh:/etc/init.sh
     ports:
       - 3306:3306
-  redis:
-    container_name: redis_magento2
-    build:
-      context: ./redis
+
+#  redis:
+#    container_name: redis_magento2
+#    build:
+#      context: ./redis
 
 

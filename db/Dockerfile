@@ -1,4 +1,7 @@
-FROM mariadb:10.4
+From mariadb
+
+#From mariadb:10.5.5
+#FROM mysql:8.0
 
 #FROM debian
 
