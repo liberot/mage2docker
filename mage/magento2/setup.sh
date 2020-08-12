@@ -25,6 +25,10 @@ php ./composer.phar install
 #	--timezone=America/Chicago 	\
 #	--use-rewrites=1
 
+# -> ./app/etc/config.php
+# -> ./app/etc/env.php
+
 ./bin/magento setup:install
 ./bin/magento setup:di:compile
+./bin/magento indexer:reindex
  
