@@ -11,8 +11,6 @@ services:
     ports:
       - 8081:80
       - 8082:443
-    links:
-      - db:db
   db:
     container_name: db_magento2
     build:
