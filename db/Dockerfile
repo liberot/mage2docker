@@ -1,10 +1,9 @@
-From mariadb
+FROM mariadb
 
-#From mariadb:10.5.5
+#FROM mariadb:10.5.5
 #FROM mysql:8.0
 
 #FROM debian
-
 #RUN apt-get update                        && \
 #  apt-get -y install mariadb-server       && \
 #  mkdir -p /var/lib/mysql                 && \
