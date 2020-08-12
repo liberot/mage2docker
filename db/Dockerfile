@@ -1,4 +1,4 @@
-FROM mariadb
+FROM mariadb:10.1
 
 #FROM debian
 
