@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #do it on local fd babä for frustrating feces reason...
-
-git clone https://github.com/magento/magento2
+#git clone https://github.com/magento/magento2
 
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 php -r "if (hash_file('sha384', 'composer-setup.php') === 'e5325b19b381bfd88ce90a5ddb7823406b2a38cff6bb704b0acc289a09c8128d4a8ce2bbafcd1fcbdc38666422fe2806') { echo     'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
@@ -33,6 +32,9 @@ php -d memory_limit=-1 ./composer.phar install
 # -> ./app/etc/env.php
 
 php -d memory_limit=-1 ./bin/magento setup:install
+php -d memory_limit=-1 ./bin/magento setup:upgrade
 php -d memory_limit=-1 ./bin/magento setup:di:compile
+php -d memory_limit=-1 ./bin/magento setup:static-content:deploy -f
 php -d memory_limit=-1 ./bin/magento indexer:reindex
+
  
