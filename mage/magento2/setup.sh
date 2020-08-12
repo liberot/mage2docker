@@ -9,6 +9,7 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === 'e5325b19b381bfd88ce90
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 
+php -d memory_limit=-1 ./composer.phar upgrade 
 php -d memory_limit=-1 ./composer.phar install
 
 #./bin/magento setup:install 		\
